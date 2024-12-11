@@ -1,4 +1,10 @@
-list1 = ["зелене", "стигла", "червоний"]
-list2 = ["яблуко", "вишня", "томат"]
-for number, letter in zip(list1, list2):
-    print(number, letter)
+def modify_list(lst: list) -> None:
+    lst = lst.copy()
+    lst.append(4)
+    lst.append(5)
+    lst.
+    print(lst)
+
+my_list = [1, 2, 3]
+modify_list(my_list)
+print(my_list)  # виведе: [1, 2, 3]
