@@ -2,7 +2,6 @@ def modify_list(lst: list) -> None:
     lst = lst.copy()
     lst.append(4)
     lst.append(5)
-    lst.
     print(lst)
 
 my_list = [1, 2, 3]
