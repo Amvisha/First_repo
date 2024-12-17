@@ -4,4 +4,4 @@ def concatenate(*args) -> str:
         result += arg
     return result
 
-print(concatenate("Hello", " ", "world", "!"))
+print(concatenate("Hello 2", "2 ", "world", "!"))
