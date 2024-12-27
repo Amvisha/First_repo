@@ -1,8 +1,12 @@
 def factorial(n):
-    if n == 0: # базовий випадок
+    print("Виклик функції factorial з n = ", n)
+    if n == 1:
+        print("Базовий випадок, n = 1, повернення 1")
         return 1
     else:
-        return n * factorial(n-1) # рекурсивний випадок
+        result = n * factorial(n-1)
+        print("Повернення результату для n = ", n, ": ", result)
+        return result
 
-n = int(input("Введіть число:"))
-print(factorial(n)) # виведе 120
+n = int(input("Введіть число: "))
+print(factorial(n))
