@@ -39,7 +39,7 @@ print(f'Are sentence equal?',  sentense_one == sentense_two)
 print(f'Are sentence identical?',  sentense_one is sentense_two)
 print(f'Path the sentence in memory {id(sentense_one)}')
 print(f'Path the sentence in memory', id(sentense_two))
-
+"""
 
 flat = int(input('How many flats on the floor: '))
 floor = int(input('How many floors in entrance: '))
@@ -52,7 +52,10 @@ while flat_number > flat:
     if floor_number > floor:
         floor_number = 1
         entrance += 1
-print(f'Flat in a {floor_number} floor in {entrance} entrance.')
+if flat_number <= 0:
+    print(f'Wrong flat number {flat_number}.')
+else:
+    print(f'Flat in a {floor_number} floor in {entrance} entrance.')
 """
 
 flat = int(input('How many flats on the floor: '))
@@ -64,7 +67,7 @@ floor_number = ((flat_number - 1) % flats_per_entrance) // flat + 1
 print(f'Flat in a {floor_number} floor in {entrance_number} entrance.')
 
 
-"""
+
 if flat_number / 4 < 1 :
     floor = 1
     print(f'Flat in a {floor}')
