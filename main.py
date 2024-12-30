@@ -31,7 +31,7 @@ summary += abs(value_two)
 print(summary)
 summary += abs(value_three)
 print(summary)
-"""
+
 sentense_one = 'Hello world'
 sentense_two = 'Hello ' + 'world'
 print(sentense_one, sentense_two, sep='\n')
@@ -39,3 +39,35 @@ print(f'Are sentence equal?',  sentense_one == sentense_two)
 print(f'Are sentence identical?',  sentense_one is sentense_two)
 print(f'Path the sentence in memory {id(sentense_one)}')
 print(f'Path the sentence in memory', id(sentense_two))
+
+
+flat = int(input('How many flats on the floor: '))
+floor = int(input('How many floors in entrance: '))
+flat_number = int(input('Enter flat number: '))
+floor_number = 1
+entrance = 1
+while flat_number > flat:
+    flat_number -= flat
+    floor_number += 1
+    if floor_number > floor:
+        floor_number = 1
+        entrance += 1
+print(f'Flat in a {floor_number} floor in {entrance} entrance.')
+"""
+
+flat = int(input('How many flats on the floor: '))
+floor = int(input('How many floors in entrance: '))
+flat_number = int(input('Enter flat number: '))
+flats_per_entrance = flat * floor
+entrance_number = (flat_number - 1) // flats_per_entrance + 1
+floor_number = ((flat_number - 1) % flats_per_entrance) // flat + 1
+print(f'Flat in a {floor_number} floor in {entrance_number} entrance.')
+
+
+"""
+if flat_number / 4 < 1 :
+    floor = 1
+    print(f'Flat in a {floor}')
+else:
+    for flat_number
+"""
