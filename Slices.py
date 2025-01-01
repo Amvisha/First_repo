@@ -1,0 +1,1 @@
+three_numbers = numbers[2::3]
