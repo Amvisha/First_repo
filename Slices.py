@@ -33,11 +33,47 @@ cat = {'nick': "Simon", "age": 7,"characteristics": ["лагідний", "кус
 age = cat.get("age")
 cat.update(info)
 print(cat)
-"""
+
 
 a = [1, 2, 3]
 b = a
 c = [1, 2, 3]
-
 print(a is b)  # True
 print(a is c)  # False
+
+some_list = ["apple", "banana", "cherry"]
+for index, value in enumerate(some_list):
+    print(index, value)
+
+
+list1 = ["зелене", "стигла", "червоний"]
+list2 = ["яблуко", "вишня", "томат"]
+for number, letter in zip(list1, list2):
+    print(number, letter)
+
+val = 0
+try:
+    val = int(val)
+except ValueError:
+    print(f"val {val} is not a number")
+else:
+    print(val > 0)
+finally:
+    print("This will be printed anyway")
+
+
+def add_numbers(num1: int, num2: int) -> int:
+    sum = num1 * num2
+    return sum
+
+result = add_numbers(5, 10)
+print(result)  # Виведе: 15"""
+
+def modify_list(lst: list) -> None:
+    lst.append(4)
+
+my_list = [1, 2, 3]
+modify_list(my_list)
+print(my_list)  # виведе: [1, 2, 3, 4]
+
+
