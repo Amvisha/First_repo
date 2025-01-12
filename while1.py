@@ -59,3 +59,61 @@ print(f"Команда: {team}")
 import random
 price = random.uniform(50, 100)
 print(f"Випадкова ціна: {price:.2f}")
+
+import math
+# Вихідне число
+x = 3.7
+# Використання різних методів округлення
+ceil_result = math.ceil(x)  # Округлення вгору
+floor_result = math.floor(x)  # Округлення вниз
+trunc_result = math.trunc(x)  # Відсікання дробової частини
+print(ceil_result, floor_result, trunc_result)
+
+import math
+# Використання констант
+print(math.pi)  # Виведе приблизне значення π
+# Тригонометрія
+angle = math.radians(60)  # Конвертація з градусів у радіани
+print(math.sin(angle))  # Синус кута
+# Корінь числа
+print(math.sqrt(9))  # Квадратний корінь з 9
+# Логарифми
+print(math.log(10, 2))  # Логарифм 10 за основою 2
+
+s = "Hi there!"
+start = 1
+end = 10
+print(s.find("er", start, end)) # 5
+print(s.find("q")) # -1
+
+s = 'Some words'
+print(s.find("o"))
+print(s.rfind('o'))
+
+s = 'Some words'
+print(s.index("o"))
+print(s.rindex('o'))
+
+text = "hello world"
+result = text.split()
+print(result)  # Виведе: ['hello', 'world']
+
+text = "apple,banana,cherry"
+result = text.split(',')
+print(result)  # Виведе: ['apple', 'banana', 'cherry']
+
+list_of_strings = ['Hello', 'world']
+result = ' '.join(list_of_strings)
+print(result)  # Виведе: 'Hello world'
+
+elements = ['earth', 'air', 'fire', 'water']
+result = ', '.join(elements)
+print(result)  # Виведе: 'earth, air, fire, water'
+
+clean = '   spacious   '.strip()
+print(clean) # spacious
+
+text = "Hello world"
+new_text = text.replace("world", "Python")
+print(new_text)
+
