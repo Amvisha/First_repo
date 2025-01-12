@@ -117,3 +117,33 @@ text = "Hello world"
 new_text = text.replace("world", "Python")
 print(new_text)
 
+text = "one fish, two fish, red fish, blue fish"
+new_text = text.replace("fish", "bird", 2)
+print(new_text)
+
+text = "Hello, world!"
+new_text = text.replace(", world", "")
+print(new_text)
+
+print('TestHook'.removeprefix('Test')) # Hook
+print('TestHook'.removeprefix('Hook')) # TestHook
+
+print('TestHook'.removesuffix('Test'))
+print('TestHook'.removesuffix('Hook'))
+
+url_search = "<https://www.google.com/search?q=Cat+and+dog&ie=utf-8&oe=utf-8&aq=t>"
+_, query = url_search.split('?')
+print(query)
+
+url_search = "<https://www.google.com/search?q=Cat+and+dog&ie=utf-8&oe=utf-8&aq=t>"
+_, query = url_search.split('?')
+print(query)
+
+obj_query = {}
+for el in query.split('&'):
+    key, value = el.split('=')
+    obj_query.update({key: value.replace('+', ' ')})
+print(obj_query)
+
+
+
