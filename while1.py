@@ -202,3 +202,7 @@ for num in range(12):
 name = "Alice"
 formatted = f"{name:>10}"
 print(formatted)  # Виведе: '     Alice' (вирівнювання праворуч)
+
+completion = 0.756
+formatted = f"{completion: .1%}"
+print(formatted)  # Виведе: '75.6%'
