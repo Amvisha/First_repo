@@ -69,3 +69,32 @@ pattern = r"[;,\-:!\.]"
 replacement = ""
 modified_text = re.sub(pattern, replacement, text)
 print(modified_text)
+
+import re
+phone = """
+        Михайло Куліш: 050-171-1634
+        Вікторія Кущ: 063-134-1729
+        Оксана Гавриленко: 068-234-5612
+        """
+pattern = r"(\d{3})-(\d{3})-(\d{4})"
+replacement = r"(\1) \2-\3"
+formatted_phone = re.sub(pattern, replacement, phone)
+print(formatted_phone)
+
+import re
+text = "Python - це проста, але потужна мова програмування."
+pattern = r"\s+"
+words = re.split(pattern, text)
+print(words)  # Виведе список слів у рядку
+
+import re
+text = "Python - потужна; проста, універсальна: мова!"
+pattern = r"[;,\-:!\s]+"
+elements = re.split(pattern, text)
+print(elements)  # Виведе список частин, розділених пунктуацією
+
+import re
+text = "apple#banana!mango@orange;kiwi"
+pattern = r"[#@;!]"
+fruits = re.split(pattern, text)
+print(fruits)
