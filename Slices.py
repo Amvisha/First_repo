@@ -206,7 +206,8 @@ time_part = datetime.time(12, 30, 15)
 # Комбінування дати і часу в один об'єкт datetime
 combined_datetime = datetime.datetime.combine(date_part, time_part)
 print(combined_datetime)  # Виведе "2023-12-14 12:30:15"
-"""
+
+
 
 import datetime
 # Створення об'єкта datetime з конкретною датою
@@ -283,7 +284,7 @@ timestamp = 1617183600
 # Конвертація timestamp назад у datetime
 dt_object = datetime.fromtimestamp(timestamp)
 print(dt_object)  # Виведе відповідний datetime
-"""
+
 %Y - рік з чотирма цифрами (наприклад, 2023).
 %y - рік з двома цифрами (наприклад, 23).
 %m - місяць як номер (наприклад, 03 для березня).
@@ -296,7 +297,9 @@ print(dt_object)  # Виведе відповідний datetime
 %a - скорочена назва дня тижня (наприклад, Tue).
 %B - повна назва місяця (наприклад, March).
 %b або %h - скорочена назва місяця (наприклад, Mar).
-%p - AM або PM для 12-годинного формату."""
+%p - AM або PM для 12-годинного формату.
+
+
 from datetime import datetime
 now = datetime.now()
 # Форматування дати і часу
@@ -381,7 +384,9 @@ current_time = time.time()
 print(f"Поточний час: {current_time}")
 local_time = time.localtime(current_time)
 print(f"Місцевий час: {local_time}")
-"""
+
+
+
 tm_year - рік
 tm_mon - місяць від 1 до 12
 tm_mday - день місяця від 1 до 31
@@ -390,7 +395,8 @@ tm_min - хвилини від 0 до 59
 tm_sec - секунди від 0 до 59
 tm_wday - день тижня від 0 до 6
 tm_yday - день року від 1 до 366
-tm_isdst - прапорець літнього часу. 0 означає, що літній час не діє, -1 - інформація відсутня, 1 - літній час діє"""
+tm_isdst - прапорець літнього часу. 0 означає, що літній час не діє, -1 - інформація відсутня, 1 - літній час діє
+
 
 import time
 # Записуємо час на початку виконання
@@ -413,3 +419,88 @@ print(b)  # Виведе 10000000
 # Один мільярд
 c = 1_000_000_000
 print(c)  # Виведе 1000000000
+
+
+from datetime import datetime
+date_now = datetime.now().date()
+print(date_now)
+
+# Створення об'єкта datetime
+date_user = datetime(2023, 12, 14).date()
+print(date_user)
+# Отримання номера дня тижня
+day_of_week = date_user.weekday()
+# Поверне число від 0 (понеділок) до 6 (неділя)
+print(f"Дата: {date_user}, день тижня:{day_of_week}")
+# Використання isoweekday() для отримання дня тижня
+day_of_week = date_user.isoweekday()
+print(f"День тижня (ISO): {day_of_week}")  # Поверне число від 1 до 7, що відповідає дню тижня
+# Конвертація у формат ISO 8601
+iso_format = date_user.isoformat()
+print(f"ISO: {iso_format}")
+iso_calendar = date_user.isocalendar()
+print(f"ISO календар\nрік: {iso_calendar[0]}, ISO тиждень: {iso_calendar[1]}, ISO день тижня: {iso_calendar[2]}")
+'''date_user = date_user
+    if day_of_week == 6:
+        date_user = date_user + 2
+    elif day_of_week == 7:
+        date_user = date_user + 1
+    else:
+        date_user = date_user'''
+
+
+
+from datetime import datetime
+date_now = datetime.now().date()
+
+
+import re
+users = [
+    {"name": "Bill Gates", "birthday": "1955.3.25"},
+    {"name": "Steve Jobs", "birthday": "1955.3.21"},
+    {"name": "Jinny Lee", "birthday": "1956.3.22"},
+    {"name": "Sarah Lee", "birthday": "1957.3.23"},
+    {"name": "Jonny Lee", "birthday": "1958.3.22"},
+    {"name": "John Doe", "birthday": "1985.01.23"},
+    {"name": "Jane Smith", "birthday": "1990.01.27"}
+]
+
+print(users)
+
+
+pattern = r"\d+.\d+\.\d+"
+matches = re.findall(pattern, users)
+print(matches)
+
+match = re.search(pattern, users)
+if match:
+    print("Електронна адреса:", match.group())
+
+
+
+def string_to_date(date_string):
+
+def date_to_string(date):
+
+def get_upcoming_birthdays(name)
+
+date_string = "2024.01.01"
+converted_date = string_to_date(date_string)
+print(converted_date)
+date_string = date_to_string(converted_date)
+print(date_string)
+
+get_upcoming_birthdays(name)
+"""
+
+from datetime import datetime
+
+date_string = "2024.01.01"
+
+def string_to_date(date_string):
+    converted_date = string_to_date.strptime(date_string, "%Y.%m.%d")
+    print(converted_date)
+
+def date_to_string(date):
+    date_string = date_to_string(converted_date, "%Y.%m.%d")
+    print(date_string)
