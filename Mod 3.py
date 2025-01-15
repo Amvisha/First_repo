@@ -12,6 +12,7 @@ print(converted_date)
 date_string = date_to_string(converted_date)
 print(date_string)
 """
+
 """
 from datetime import datetime
 def string_to_date(date_string):
@@ -31,12 +32,22 @@ prepared_users = prepare_user_list(users)
 print(prepared_users)
 """
 
+
 from datetime import datetime, timedelta
 
 def string_to_date(date_string):
     return datetime.strptime(date_string, "%Y.%m.%d").date()
 
 def find_next_weekday(start_date, weekday):
+    days_ahead = weekday - start_date.weekday() + 7 if weekday <= 0 else weekday - start_date.weekday()
+    return start_date + timedelta(days=days_ahead)
 
-weekday = start_date.weekday()
-days_ahead
+start_date = string_to_date("2024.03.26")  # Перетворення рядка на дату
+#print(start_date.weekday())
+#print(start_date)
+
+next_monday = find_next_weekday(start_date, 0)  # Знайти наступний понеділок
+print(next_monday)
+
+next_friday = find_next_weekday(start_date, 4)  # Знайти наступну п'ятницю
+print(next_friday)
