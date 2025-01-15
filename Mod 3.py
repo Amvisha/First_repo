@@ -12,7 +12,7 @@ print(converted_date)
 date_string = date_to_string(converted_date)
 print(date_string)
 """
-
+"""
 from datetime import datetime
 def string_to_date(date_string):
     return datetime.strptime(date_string, "%Y.%m.%d").date()
@@ -29,3 +29,14 @@ users = [
 ]
 prepared_users = prepare_user_list(users)
 print(prepared_users)
+"""
+
+from datetime import datetime, timedelta
+
+def string_to_date(date_string):
+    return datetime.strptime(date_string, "%Y.%m.%d").date()
+
+def find_next_weekday(start_date, weekday):
+
+weekday = start_date.weekday()
+days_ahead
