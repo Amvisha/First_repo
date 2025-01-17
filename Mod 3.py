@@ -92,6 +92,7 @@ upcoming_birthdays = get_upcoming_birthdays(birthday_this_year, days=7)
 print(upcoming_birthdays)
 """
 
+"""
 from datetime import datetime, date
 
 
@@ -133,6 +134,8 @@ for user in users:
 
 upcoming_birthdays = get_upcoming_birthdays(birthday_this_year, days=7)
 print(upcoming_birthdays)
+"""
+
 
 from datetime import datetime, date
 
@@ -162,10 +165,11 @@ def get_upcoming_birthdays(users, days=7):
 
 
 users = [
-    {"name": "Sarah Lee", "birthday": "1957.03.30"},
-    {"name": "John Doe", "birthday": "1985.03.28"},
-    {"name": "Jane Smith", "birthday": "1990.03.27"},
+    {"name": "Bill Gates", "birthday": "1955.3.25"},
+    {"name": "Steve Jobs", "birthday": "1955.3.21"},
+    {"name": "Jinny Lee", "birthday": "1956.3.22"},
     {"name": "John Doe", "birthday": "1985.01.23"},
+    {"name": "Jane Smith", "birthday": "1990.01.27"}
 ]
 birthday_this_year = prepare_user_list(users)
 
