@@ -10,6 +10,8 @@ print(type(my_list.clear()))
 sorted_list = sorted(my_list.copy())
 print(sorted_list)"""
 #my_list.sort(reverse=True)
+
+"""
 print(my_list.count(347))
 print(len(my_list))
 print(my_list[::-1]) #[0, -23, -435, 347, 235, 235, 346, 7, 5, 3, 2, 1]
@@ -29,3 +31,20 @@ users = [
     {"name": "Jane Smith", "birthday": "1990.01.27"}
 ]
 print(users[:]["birthday"]
+"""
+
+my_set = {1, 2, 3, 56, 'test', 'Test'}
+print(my_set)
+my_set.add('fakell')
+print(my_set)
+my_set.remove('fakell')
+print(my_set)
+my_set.discard(2)
+print(my_set)
+
+list_one = [1, 1, 2, 3, 5, 8, 13, 21, 7, 5, 100]
+list_two = [11, 1, 21, 31, 15, 8, 13, 21, 21, 7, 15, 101]
+print(list(set(list_one) & set(list_two))) # in fist and second & (and)
+print(list(set(list_one) | set(list_two))) # in fist or in second | (or)
+print(list(set(list_one) - set(list_two))) # in fist and not in second & (minus)
+print(list(set(list_one) ^ set(list_two))) # in fist and not in second + in second and not in fist ^
