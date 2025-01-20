@@ -74,3 +74,6 @@ print(my_string.endswith('!')) # True
 print(my_string.endswith('.')) # False
 print(my_string.title()) # Hello My Little Friends!
 print(my_string.count('e')) # 3
+print(my_string.capitalize()) # Hello my little friends!
+
+
