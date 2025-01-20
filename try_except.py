@@ -11,4 +11,4 @@ while True:
     except ValueError:
         print(f'{age} is not a number. Please write number!')
     finally:
-        print('-'*30)
+        print('.'*60)
