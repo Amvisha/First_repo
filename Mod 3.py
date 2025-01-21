@@ -30,24 +30,27 @@ prepared_users = prepare_user_list(users)
 print(prepared_users)
 """
 
-"""
+
 from datetime import datetime, timedelta
 
 def string_to_date(date_string):
     return datetime.strptime(date_string, "%Y.%m.%d").date()
 
 def find_next_weekday(start_date, weekday):
-    days_ahead = weekday - start_date.weekday() + 7 if weekday <= 0 else weekday - start_date.weekday()
+    if weekday <= start_date.weekday():
+        days_ahead = weekday - start_date.weekday() + 7
+    else:
+        days_ahead = weekday - start_date.weekday()
     return start_date + timedelta(days=days_ahead)
 
-start_date = string_to_date("2024.03.26")  # Перетворення рядка на дату
-
+start_date = string_to_date("2025.01.21")  # Перетворення рядка на дату
+print(f'Поточний день тижня: {start_date} {start_date.weekday()}')
 next_monday = find_next_weekday(start_date, 0)  # Знайти наступний понеділок
-print(next_monday)
+print(f'Наступний понеділок: {next_monday} {next_monday.weekday()}')
 
 next_friday = find_next_weekday(start_date, 4)  # Знайти наступну п'ятницю
-print(next_friday)
-"""
+print(f"Наступна п'ятниця: {next_friday} {next_friday.weekday()}")
+
 
 """
 from datetime import datetime, date
@@ -136,7 +139,6 @@ upcoming_birthdays = get_upcoming_birthdays(birthday_this_year, days=7)
 print(upcoming_birthdays)
 """
 
-
 from datetime import datetime, date
 
 
@@ -154,6 +156,12 @@ def prepare_user_list(user_data):
         prepared_list.append({"name": user["name"], "birthday": string_to_date(user["birthday"])})
     return prepared_list
 
+def find_next_weekday(start_date, weekday):
+    if weekday <= start_date.weekday():
+        days_ahead = weekday - start_date.weekday() + 7
+    else:
+        days_ahead = weekday - start_date.weekday()
+    return start_date + timedelta(days=days_ahead)
 
 def get_upcoming_birthdays(users, days=7):
     upcoming_birthdays = []
