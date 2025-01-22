@@ -10,7 +10,7 @@ def invite_to_event(username):
 invite_to_event('Stepan')
 user = 'Ivan'
 print(f'{user[3]}')
-invite_to_event(user)"""
+invite_to_event(user)
 
 import random
 dice_roll = random.randint(1, 6)
@@ -206,3 +206,27 @@ print(formatted)  # Виведе: '     Alice' (вирівнювання пра�
 completion = 0.756
 formatted = f"{completion: .1%}"
 print(formatted)  # Виведе: '75.6%'
+"""
+
+
+my_list = [1, 2, 3, 4, None, 7, 346, 235, None, 347, -432, None, -23, 0]
+print(my_list)
+print(my_list.index(None))
+while range(len(my_list)):
+    if None not in my_list:
+        break
+    my_list.pop(my_list.index(None))
+while True:
+    if None not in my_list:
+        break
+    my_list.pop(my_list.index(None))
+print(my_list)
+
+
+
+
+
+
+
+
+

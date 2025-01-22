@@ -14,7 +14,7 @@ for i in lists:
     print(i)
 
 for i in range(len(lists)):
-    print(i, lists[i])"""
+    print(i, lists[i])
 
 string_one = input('Enter string: ')
 string_two = input('Enter string for compare: ')
@@ -23,7 +23,12 @@ for char in string_one:
         print(False)
         break
 else:
-    print(True)
+    print(True)"""
+# Числа Фібоначчі
+num_one, num_two = 0, 1
+for _ in range(20):
+    print(num_one, end=' ')
+    num_one, num_two = num_two, num_one + num_two
 
 
 
