@@ -206,7 +206,6 @@ print(formatted)  # Виведе: '     Alice' (вирівнювання пра�
 completion = 0.756
 formatted = f"{completion: .1%}"
 print(formatted)  # Виведе: '75.6%'
-"""
 
 
 my_list = [1, 2, 3, 4, None, 7, 346, 235, None, 347, -432, None, -23, 0]
@@ -220,8 +219,19 @@ while True:
     if None not in my_list:
         break
     my_list.pop(my_list.index(None))
-print(my_list)
+print(my_list)"""
 
+
+try:
+    value_a = input("Enter value a: ")
+    value_b = input("Enter value b: ")
+    value_x = -float(value_a)/float(value_b)
+except Exception as e:
+    print(e)
+else:
+    print(f"Result X equal {round(value_x, 2)}")
+finally:
+    print("End of calculation")
 
 
 
