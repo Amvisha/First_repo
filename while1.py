@@ -219,7 +219,7 @@ while True:
     if None not in my_list:
         break
     my_list.pop(my_list.index(None))
-print(my_list)"""
+print(my_list)
 
 
 try:
@@ -231,7 +231,20 @@ except Exception as e:
 else:
     print(f"Result X equal {round(value_x, 2)}")
 finally:
-    print("End of calculation")
+    print("End of calculation")"""
+
+# Калькулятор
+x = input("Enter formula: ")
+print(eval(x))
+
+
+
+
+
+
+
+
+
 
 
 
