@@ -14,3 +14,19 @@ def add(value_one: int, value_two: int) ->int:
 
 result: int = add(2, 4)
 print(result)
+
+def sum_of_all_numbers(*numbers): # *args -> (1,2,3,4,5,6,7,8,9)
+    sum = 0
+    for value in numbers:
+        try:
+            sum += value
+        except TypeError:
+            continue
+        except ValueError:
+            continue
+    return sum
+print(sum_of_all_numbers(1,2,3,4,5,6,7,8,9))
+
+
+
+
