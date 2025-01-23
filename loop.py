@@ -23,12 +23,19 @@ for char in string_one:
         print(False)
         break
 else:
-    print(True)"""
+    print(True)
+
+
 # Числа Фібоначчі
 num_one, num_two = 0, 1
 for _ in range(20):
     print(num_one, end=' ')
     num_one, num_two = num_two, num_one + num_two
+"""
+
+def fibonachi(number):
+    return number if number == 0 or  number == 1 else fibonachi(number-2) + fibonachi(number - 1)
+print(fibonachi(10))
 
 
 
