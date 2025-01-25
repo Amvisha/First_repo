@@ -36,6 +36,10 @@ from datetime import datetime, timedelta
 def string_to_date(date_string):
     return datetime.strptime(date_string, "%Y.%m.%d").date()
 
+def date_to_string(date):
+    return date.strftime("%Y.%m.%d")
+
+
 def find_next_weekday(start_date, weekday):
     if weekday <= start_date.weekday():
         days_ahead = weekday - start_date.weekday() + 7
@@ -43,7 +47,8 @@ def find_next_weekday(start_date, weekday):
         days_ahead = weekday - start_date.weekday()
     return start_date + timedelta(days=days_ahead)
 
-start_date = string_to_date("2025.01.21")  # Перетворення рядка на дату
+start_date = string_to_date("1955.3.25")  # Перетворення рядка на дату
+print()
 print(f'Поточний день тижня: {start_date} {start_date.weekday()}')
 next_monday = find_next_weekday(start_date, 0)  # Знайти наступний понеділок
 print(f'Наступний понеділок: {next_monday} {next_monday.weekday()}')
@@ -139,8 +144,8 @@ upcoming_birthdays = get_upcoming_birthdays(birthday_this_year, days=7)
 print(upcoming_birthdays)
 """
 
-from datetime import datetime, date
 
+from datetime import datetime, timedelta, date
 
 def string_to_date(date_string):
     return datetime.strptime(date_string, "%Y.%m.%d").date()
@@ -187,3 +192,4 @@ for user in users:
         {"name": user["name"], "birthday": string_to_date(user["birthday"]).replace(year=today.year)})
 
 print(get_upcoming_birthdays(birthday_this_year))
+
