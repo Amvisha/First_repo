@@ -158,7 +158,7 @@ def date_to_string(date):
 def prepare_user_list(user_data):
     prepared_list = []
     for user in user_data:
-        prepared_list.append({"name": user["name"], "birthday": string_to_date(user["birthday"])})
+        prepared_list.append({"name": user["name"], "birthday": string_to_date(user["birthday"]).replace(year=today.year)})
     return prepared_list
 
 def find_next_weekday(start_date, weekday):

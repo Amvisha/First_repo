@@ -74,31 +74,26 @@ def prepare_user_list(user_data):
         prepared_list.append({"name": user["name"], "birthday": string_to_date(user["birthday"])})
     return prepared_list
 
-def next_working_day(date):
-
+def next_working_day(u_date):
     """
     Функція для визначення наступного робочого дня.
-    :param date: Дата
+    :param u_date: Дата
     :return: Наступний робочий день
     """
+    if u_date.weekday() == 5:  # Субота
+        return u_date + timedelta(days=2)  # Понеділок
+    elif u_date.weekday() == 6:  # Неділя
+        return u_date + timedelta(days=1)  # Понеділок
+    return u_date
 
-    if date.weekday() == 5:  # Субота
-        return date + timedelta(days=2)  # Понеділок
-    elif date.weekday() == 6:  # Неділя
-        return date + timedelta(days=1)  # Понеділок
-    return date
-
-def get_upcoming_birthdays(users, days=7):
+def get_upcoming_birthdays(users_data, days=7):
     upcoming_birthdays = []
     today = date.today()
-    week_from_today = today + timedelta(days=7)
-    prepared_list = prepare_user_list(users)
-    for user in users:
-        prepared_list = datetime.strptime(user["birthday"], "%Y.%m.%d").date()
-        bday_this_year = prepared_list.replace(year=today.year)
-        if today <= bday_this_year <= week_from_today:
-            # Переносимо на наступний робочий день, якщо потрібно
-            greeting_day = next_working_day(bday_this_year)
+    for user_data in users_data:
+        #birthday = string_to_date(users_data)
+        greeting_day = prepare_user_list(user_data).replace(year=today.year)
+        if today <= users_data["birthday"] <= today + timedelta(days=7):
+
             upcoming_birthdays.append({"name": user["name"], "greeting_day": greeting_day})
     return upcoming_birthdays
 
