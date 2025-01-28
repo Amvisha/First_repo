@@ -1,33 +1,37 @@
 from datetime import datetime
-def get_days_from_today(date: str) -> int:
+def get_days_from_today(date: datetime) -> int:
     """
     Function returns an integer indicating the number of days from the given date to the current one
 
     Input:
-    :param date: string
+    :param date: datetime
 
     Output:
     :return: integer
     """
     today = datetime.today()
-    while True:
-        if type(date) == str:
-            try:
-
-            except ValueError:
-                print(
-                f"{date} is not a number in format 'YYYY-MM-DD' (example, '2020-10-09'). Please write number in format 'YYYY-MM-DD'!")
-            finally:
-                print('.' * 60)
-        break
-
-    given_date = datetime.strptime(date, '%Y-%m-%d')
-    days_from_today = (today - given_date).days
+    days_from_today = (given_date - today).days
 
     return days_from_today
 
-result: int = get_days_from_today(input("Введіть дату у форматі 'РРРР-ММ-ДД' (наприклад, '2020-10-09') "))
+given_date = input("Введіть дату у форматі 'РРРР-ММ-ДД' (наприклад, '2020-10-09') ")
+
+while True:
+    try:
+        print(type(given_date))
+        given_date = datetime.strptime(given_date, '%Y-%m-%d')
+        print(type(given_date))
+    except ValueError:
+        print(f"{given_date} is not a number in format 'YYYY-MM-DD' (example, '2020-10-09'). Please write number in format 'YYYY-MM-DD'!")
+    except TypeError:
+        print(f"{given_date} is not a number in format 'YYYY-MM-DD' (example, '2020-10-09'). Please write number in format 'YYYY-MM-DD'!T")
+    finally:
+        print('.' * 60)
+    break
+
+result: int = get_days_from_today(given_date)
 print(result, type(result))
+
 """    
 
  while True:
