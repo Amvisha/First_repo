@@ -1,41 +1,35 @@
 from datetime import datetime
-def get_days_from_today(date: datetime) -> int:
+
+def get_days_from_today() -> int:
     """
     Function returns an integer indicating the number of days from the given date to the current one
 
-    Input:
-    :param date: datetime
-
     Output:
     :return: integer
+             A negative number if the specified date is in the future.
     """
-    today = datetime.today()
-    days_from_today = (given_date - today).days
+    while True:
+        given_date = input("Enter the date in the format 'YYYY-MM-DD' (e.g. '2020-10-09') ")
 
+        try:
+            given_date = datetime.strptime(given_date, '%Y-%m-%d').date()  # Converting a date string to a datetime object
+            break
+
+        except Exception as e:
+            print(e)
+
+        #    print(f"Time data {given_date} does not match format 'YYYY-MM-DD' (e.g. '2020-10-09'). Please write number in format 'YYYY-MM-DD'!")
+    today = datetime.today().date()  # Current date
+    days_from_today = (given_date - today).days  # Difference between dates
     return days_from_today
 
-given_date = input("Введіть дату у форматі 'РРРР-ММ-ДД' (наприклад, '2020-10-09') ")
-
-while True:
-    try:
-        print(type(given_date))
-        given_date = datetime.strptime(given_date, '%Y-%m-%d')
-        print(type(given_date))
-    except ValueError:
-        print(f"{given_date} is not a number in format 'YYYY-MM-DD' (example, '2020-10-09'). Please write number in format 'YYYY-MM-DD'!")
-    except TypeError:
-        print(f"{given_date} is not a number in format 'YYYY-MM-DD' (example, '2020-10-09'). Please write number in format 'YYYY-MM-DD'!T")
-    finally:
-        print('.' * 60)
-    break
-
-result: int = get_days_from_today(given_date)
-print(result, type(result))
+result: int = get_days_from_today()
+print(f"{result} days between today's date and the given date.")
 
 """    
 
  while True:
-        given_date = input("Введіть дату у форматі 'РРРР-ММ-ДД' (наприклад, '2020-10-09') ")
+        given_date = input("Enter the date in the format 'YYYY-MM-DD' (e.g. '2020-10-09') ")
         try:
             given_date = datetime.strptime(given_date, '%Y-%m-%d').date()
             if age >= 18:

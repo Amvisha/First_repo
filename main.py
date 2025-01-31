@@ -41,15 +41,15 @@ print(f'Path the sentence in memory {id(sentense_one)}')
 print(f'Path the sentence in memory', id(sentense_two))
 """
 
-flat = int(input('How many flats on the floor: '))
-floor = int(input('How many floors in entrance: '))
+flats = int(input('How many flats on the floor: '))
+floors = int(input('How many floors in entrance: '))
 flat_number = int(input('Enter flat number: '))
 floor_number = 1
 entrance = 1
-while flat_number > flat:
-    flat_number -= flat
+while flat_number > flats:
+    flat_number -= flats
     floor_number += 1
-    if floor_number > floor:
+    if floor_number > floors:
         floor_number = 1
         entrance += 1
 if flat_number <= 0:
