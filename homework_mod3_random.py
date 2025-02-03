@@ -14,7 +14,7 @@ def get_numbers_ticket(min_number: int, max_number: int, quantity: int) -> list:
                  If the parameters do not meet the specified constraints, the function returns an empty list.
         """
     numbers = []
-    if min_number < 1 or max_number > 1000 or quantity > max_number - min_number: # Checking the validity of input data
+    if min_number < 1 or max_number > 1000 or not min_number <= quantity <= max_number: # Checking the validity of input data
         return [] # Return an empty list
 
     for number in range(min_number, max_number+1): # Creating a list in the range from 'min_number' to 'max_number'
@@ -23,6 +23,6 @@ def get_numbers_ticket(min_number: int, max_number: int, quantity: int) -> list:
     numbers = sorted(numbers) # Create a new sorted list
     return numbers
 
-lottery_numbers = get_numbers_ticket(2, 49, 6)
+lottery_numbers = get_numbers_ticket(1, 49, 6)
 print("Ваші лотерейні числа:", lottery_numbers)
 
