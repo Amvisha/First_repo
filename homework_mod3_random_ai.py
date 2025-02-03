@@ -15,7 +15,7 @@ def get_numbers_ticket(min: int, max: int, quantity: int) -> list:
   """
 
   # Перевірка валідності вхідних даних
-  if not 1 <= min <= max <= 1000 or not min <= quantity <= max:
+  if not 1 <= min <= max <= 10000 or not min <= quantity <= max:
     return []
 
   # Генерація унікальних чисел
