@@ -23,6 +23,5 @@ def get_numbers_ticket(min_number: int, max_number: int, quantity: int) -> list:
     numbers = sorted(numbers) # Create a new sorted list
     return numbers
 
-lottery_numbers = get_numbers_ticket(1, 49, 6)
+lottery_numbers = get_numbers_ticket(1, 49, 6) # Example of using the function
 print("Ваші лотерейні числа:", lottery_numbers)
-
